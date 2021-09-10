@@ -2,7 +2,7 @@ name: 'Golang Outdated'
 description: 'Check if your go mod dependencies are up to date'
 inputs:
   ignore:
-    description: 'A semicolon-separated list of depedencies to ignore.'
+    description: 'A multiline string with list of dependencies to ignore.'
     required: false
 outputs:
   is-up-to-date:

@@ -1,6 +1,21 @@
 # Go mod outdated action
 
 
+## Inputs
+
+| Input Parameter  | Required | Description |
+|:----------------:|:--------:|-------------|
+| ignore           | false    | A multiline string with list of dependencies to ignore. |
+
+
+## Outputs
+
+| Output Parameter  | Description |
+|:----------------:|-------------|
+| is-up-to-date       | true if all the direct dependencies are up to date, false otherwise. |
+| outdated     | The list of outdated dependencies. |
+
+
 ## Example of usage
 
 
@@ -75,3 +90,4 @@ jobs:
             All your direct dependencies are up to date! Well done!
 
 ```
+
