@@ -1,0 +1,22 @@
+name: 'Golang Outdated'
+description: 'Check if your go mod dependencies are up to date'
+inputs:
+  ignore:
+    description: 'A semicolon-separated list of depedencies to ignore.'
+    required: false
+outputs:
+  is-up-to-date:
+    description: 'true if all the direct dependencies are up to date, false otherwise.'
+    value: ${{ steps.main.outputs.is-up-to-date }}
+  outdated:
+    description: 'The list of outdated dependencies'
+    value: ${{ steps.main.outputs.outdated }}
+runs:
+  using: 'composite'
+  steps:
+    - id: main
+      run: ${{ github.action_path }}/entrypoint.sh
+      shell: bash
+      env:
+        IGNORED_DEPENDENCIES: ${{ inputs.ignore }}
+
