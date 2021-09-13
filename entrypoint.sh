@@ -41,8 +41,6 @@ then
     RESULT="${RESULT//$'\r'/'%0D'}"
     echo "::set-output name=is-up-to-date::false"
     echo "::set-output name=outdated::$RESULT"
-    echo "There is some outdated dependencies:"
-    echo "$RESULT"
 else
     echo "::set-output name=is-up-to-date::true"
 fi
